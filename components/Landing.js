@@ -1,9 +1,8 @@
-import React from 'react'
-import { useState } from 'react'
-import { addTodo, removeTodo } from '../redux/action'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { addTodo, removeTodo } from '../redux/action'
 
-export const TodoList = () => {
+export const Landing = () => {
     const [inputEvent, setInputEvent] = useState('')
     const dispatch = useDispatch()
 
@@ -11,7 +10,7 @@ export const TodoList = () => {
     console.log(selector)
 
     return (
-        <div className='flex flex-col gap-4 bg-slate-200 p-5'>
+        <div className='flex flex-col gap-4 p-5'>
             <div className='space-x-4'>
                 <input type="text"
                     onChange={(e) => { setInputEvent(e.target.value) }}
