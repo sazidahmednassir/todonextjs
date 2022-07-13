@@ -11,21 +11,22 @@ export const Landing = () => {
 
     return (
         <div className='flex flex-col gap-4 p-5'>
+            <div className='flex align-center justify-center'><h1>Todo App</h1></div>
             <div className='space-x-4'>
                 <input type="text"
                     onChange={(e) => { setInputEvent(e.target.value) }}
                     placeholder='Enter Here...'
-                    className='pl-4 p-3 border-2 border-black w-96'
+                    className='pl-4 p-3 border-2  w-96 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none'
                     value={inputEvent}
                 />
-                <button onClick={() => dispatch(addTodo(inputEvent), setInputEvent(''))} className='border-2 border-black pl-4 p-3 bg-blue-500 text-white rounded-lg '>ADD</button>
+                <button onClick={() => dispatch(addTodo(inputEvent), setInputEvent(''))} className='bg-transparent bg-white hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded '>ADD</button>
 
             </div>
 
             {selector.map((item) => {
                 return (
-                    <div key={item.id} className='flex justify-between items-center w-full'>
-                        <p className='font-semibold'>{item.data} </p> <button onClick={() => dispatch(removeTodo(item.id))} className='border-2 border-black pl-4 p-3 bg-red-500 text-white rounded-lg'>Delete</button>
+                    <div key={item.id} className='flex justify-between items-center w-full '>
+                        <p className='font-semibold text-5xl text-white'>{item.data} </p> <button onClick={() => dispatch(removeTodo(item.id))} className='bg-transparent bg-white hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded'>Delete</button>
                     </div>
                 )
             })}
