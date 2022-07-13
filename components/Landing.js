@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addTodo, removeTodo } from '../redux/action'
 
 export const Landing = () => {
-    const [inputEvent, setInputEvent] = useState('')
+    const [data, setData] = useState('')
     const dispatch = useDispatch()
 
     const selector = useSelector(state => state.todoReducer.list)
@@ -11,15 +11,15 @@ export const Landing = () => {
 
     return (
         <div className='flex flex-col gap-4 p-5'>
-            <div className='flex align-center justify-center text-8xl text-white mb-3 '><h1>Todo App</h1></div>
+            <div className='flex align-center justify-center text-3xl lg:text-8xl text-white mb-3 '><h1>Todo App</h1></div>
             <div className='space-x-4'>
                 <input type="text"
-                    onChange={(e) => { setInputEvent(e.target.value) }}
+                    onChange={(e) => { setData(e.target.value) }}
                     placeholder='Enter Here...'
                     className='pl-4 p-3 border-2  w-96 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none'
-                    value={inputEvent}
+                    value={data}
                 />
-                <button onClick={() => dispatch(addTodo(inputEvent), setInputEvent(''))} className='bg-transparent bg-white hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded '>ADD</button>
+                <button onClick={() => dispatch(addTodo(data), setData(''))} className='bg-transparent bg-white hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-3 lg:m-0'>ADD</button>
 
             </div>
 
