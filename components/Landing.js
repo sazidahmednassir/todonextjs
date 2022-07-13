@@ -11,7 +11,7 @@ export const Landing = () => {
 
     return (
         <div className='flex flex-col gap-4 p-5'>
-            <div className='flex align-center justify-center'><h1>Todo App</h1></div>
+            <div className='flex align-center justify-center text-8xl text-white mb-3 '><h1>Todo App</h1></div>
             <div className='space-x-4'>
                 <input type="text"
                     onChange={(e) => { setInputEvent(e.target.value) }}
